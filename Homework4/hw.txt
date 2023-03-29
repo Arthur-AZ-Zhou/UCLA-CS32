@@ -1,0 +1,34 @@
+1e. Because when you add an item to a vector, you must assume the iterator is invalidated (you have to make a new one for the updated vector). 
+Otherwise c++ may shuffle around memory and throw the pointer off. The same applies for erasing an item.
+
+3. Because when you insert something into a set, it has to be sorted alphabetically. But since no < operator was defined the set doesn't actually
+know how to compare coordinates to one another and therefore the function fails. You can compare strings and integers but you can't compare
+coordinates without making a operator< yourself. Particularly in findFirstAtLeast() (which is called by insert which is used to sort coordinates in order in
+the set) you can't use the < operator for a class of coordinates. 
+
+4b. Because you have to print out multiple lines of paths and you won't actually know what to print for the paths unless you pass in another parameter
+called path that includes the previous path to print when printing out new files. It needed to be implemented recursively because in theory, a directory
+could be infinitely large and there's no way one can write a for loop that includes every possible scenario of a directory, thus it's more efficient
+to search through a file and search through the subfiles within that file and the subfiles within the other one and etc.
+
+5a. O(N^3), if you look at the function we see 3 main loops: the int i loop, the int j loop, and int k loop. They each iterate to N times and since the loops
+are nested within one another, the time complexity is N^3. None of the other operations come close in terms of time complexity because each of them are 
+O(1).
+
+5b. The answer is still O(N^3), because the worst case for i is still N and in that scenario it's no different from part a. Since big O counts the worst
+possible scenario, the answer is still O(N^3) despite the algorithm being better in the average case.
+
+6a. O(N^2), the first part of the function is simply comparing pointers. No assignment operator was actually used because you're just setting pointers equal
+to one another. The for loop gets slightly trickier: we know that we have an N because we iterate through sp's size which is N. We then use get which 
+has a time complexity of N/2 because it starts from either head or tail depending on what's closer, thus saving time by not iterating through the entire loop.
+Insert takes O(1) beacuse that's how long insertion takes for linked lists. So time complexity is N(N/2 + 1) which gets N^2/2 + N. 
+Since N^2/2 is greater and since we disregard coefficients, the time complexity is O(N^2).
+
+6b. O(NlogN), copying all items in v takes N + N because you're just iterating through the whole loop twice. Then you add NlogN for the sorting algorithm. 
+Deleting all the nodes has a time complexity of N because you're deleting all N nodes and the time complexity of deletion is O(1) for linked lists. For copying
+all items, it's still O(N) because you have to copy N items and insertion is O(1) for linked lists. This gives us N + N + NlogN + N + N, which results to
+NlogN because it's the highest value of all the time complexities listed.
+
+6c. O(N), the first part of this problem is just comparing pointers so those ones have O(1) operation times. For using the while loop to iterate through the
+set, despite the fact you have two iterators it's actually O(N) because you only loop through the whole array once. Then the insertion is O(N) because
+you have to insert N items and inserting takes O(1) steps. So we have O(2N) but we ignore coefficient so answer is O(N).
