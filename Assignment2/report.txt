@@ -1,0 +1,144 @@
+Description:
+To create my double-linked list, I used one with a dummy node because I didn't want to check for all the possible combinations of there
+being say, only one element in the linked list or the linked list being empty. I had a previous and next pointer for each node I added to the list
+to implement the double-linked aspect of my list. My nodes are in alphabetical order because homework 1 specified it to be in alphabetical order so 
+in the implementation of the insert() function, I made sure to insert the value where it belonged alphabetically so I wouldn't have to deal with it
+elsewhere. The list is circular with the last element's next pointer pointing to the dummy node and the dummy node's previous pointer pointing to 
+the last element.
+
+Pseudocode:
+Set(const Set &src) {
+    construct new Set
+    loop thru src
+        copy value using get
+        insert new value into Set
+}
+Set &operator= (const Set &src) {
+    check if &src == this
+    delete old Set
+    construct new Set
+    loop thru src
+        copy value using get
+        insert new value into Set
+    return
+}
+bool get(int pos, ItemType& value) const {
+    iterate through the linkedlist
+        if the #th iteration is = to pos
+            set value to m_value
+            return true
+    return false
+}
+bool insert(const ItemType& value) {
+    if it doesn't contains value
+        if linkedlist is empty attach new node to head
+        increase length
+        return
+    find alphabetical place value is supposed to be in
+        make new node and insert it
+        change pointers of previous and next node to include newNode
+        increase length
+        return
+    return
+    
+}
+bool erase(const ItemType& value) {
+    iterate to the value you want to delete
+    change pointers of previous and next nodes to attach to each other
+    delete the value
+    decrease length and return
+}
+void swap(Set& other) {
+    create oldSet that is a copy-construction of *this
+    set *this to other
+    set other to oldSet
+}
+void unite(const Set& s1, const Set& s2, Set& result) {
+    clean out result Set
+    go through both sets and insert it into the result
+    since insert already accounts for duplicates we don't need to do any extra work
+}
+void butNot(const Set& s1, const Set& s2, Set& result) {
+    clean result Set
+    loop throuhg s1
+        check if s1's value at i is in s2 using contains()
+        if not we insert it into result
+}
+
+Testcases:
+Set s;
+assert(s.empty()); //tests empty()
+s.insert("b"); //empty list insert
+s.insert("h"); //insert at end
+s.insert("k");
+s.insert("a"); //insert at start
+s.insert("z");
+s.insert("c"); //insert at middle
+s.insert("k"); //test contains()
+s.dump(); //tests size
+assert(s.contains("a")); //tests contains()
+assert(!s.empty());
+assert(s.size() == 6); //tests size()
+ItemType x = "noob";
+assert(s.get(0, x) && x == "a"); //tests get()
+
+Set s1;
+s1.insert("alpha");
+s1.insert("bravo");
+s1.insert("charlie");
+s1.insert("delta");
+s1.insert("echo");
+s1.insert("foxtrot");
+s1.insert("gamma");
+s1.dump();
+s1.erase("delta"); //tests erase
+s1.dump();
+s1.erase("alpha");
+s1.dump();
+s1.erase("gamma");
+s1.dump();
+s1.erase("fatass"); //tests erase on a value that doesn't exist in set
+s1.dump();
+
+cout << "Set s: ";
+s.dump();
+cout << "Set s1: ";
+s1.dump();
+s.swap(s1); //test swap and therefore copy constructor and assignment operator
+cout << "Set s: ";
+s.dump();
+cout << "Set s1: ";
+s1.dump();
+
+Set num1;
+num1.insert("2");
+num1.insert("8");
+num1.insert("3");
+num1.insert("9");
+num1.insert("5");
+num1.dump();
+Set num2; 
+num2.insert("6");
+num2.insert("3");
+num2.insert("8");
+num2.insert("5");
+num2.insert("10");
+num2.dump();
+Set num1num2uniter;
+num1num2uniter.insert("69"); //test if unite() clears original list
+num1num2uniter.insert("420");
+num1num2uniter.insert("421");
+num1num2uniter.insert("422");
+num1num2uniter.insert("423");
+num1num2uniter.insert("424");
+Set num1ButNotnum2;
+num1ButNotnum2.insert("911"); //tests if butNot() clears original list
+num1ButNotnum2.insert("314");
+num1ButNotnum2.insert("315");
+num1ButNotnum2.insert("316");
+num1ButNotnum2.insert("317");
+num1ButNotnum2.insert("318");
+unite(num1, num2, num1num2uniter);
+num1num2uniter.dump();
+butNot(num1, num2, num1ButNotnum2);
+num1ButNotnum2.dump();
