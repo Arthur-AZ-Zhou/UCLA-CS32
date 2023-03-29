@@ -1,0 +1,33 @@
+Problem 2:
+(5, 3)
+(6, 3)
+(4, 3)
+(4, 2)
+(4, 1)
+(3, 1)
+(2, 1)
+(1, 1)
+(1, 2)
+(3, 3)
+(5, 4)
+(5, 5)
+
+Problem 4:
+(5, 3)
+(5, 4)
+(4, 3)
+(6, 3)
+(5, 5)
+(3, 3)
+(4, 2)
+(5, 6)
+(4, 5)
+(4, 1)
+(5, 7)
+(3, 5)
+
+The way the cells differ is that for stacks, the first one in is the last one out. That means that you can explore the depths of a certain part of a maze
+and the stack will keep on adding coordinates that go deeper into certain parts of the maze, hence the depth-first search. However, queues behave like a 
+sonar the way that it spreads out in the maze to find the destination coordinate, hence the first in first out. The cells that get popped are different
+because for a queue each cell around the original one searches around its cells and then those cells searches around its. It doesn't concentrate on one cell
+and searches the depths of that one cell's destination and instead cycles through all the cells around the initial cell before moving onto the next one.
