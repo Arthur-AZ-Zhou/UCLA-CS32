@@ -1,0 +1,47 @@
+ID25779
+The Carpet of Horror
+1962
+Harald Reinl,brofesco
+Joachim Fuchsberger,Karin Dor,Werner Peters,Eleonora Rossi Drago,Carl Lange
+Crime,Horror
+2.25
+
+ID35763
+Monkey Love Experiments
+2014
+Will Anderson
+Tobias Feltus,Oliver Henderson
+Animation,Drama
+4
+
+ID42069
+Chasing the Dream
+2019
+CarlosR,Romain,Grabbz
+Wunder,Jankos,Perkz,Caps,Mikyx
+Drama,Action,comedy
+5
+
+ID91101
+Harry Potter and the Toppling Towers
+2001
+Osama Bin Laden,George W Bush,Barack Obama
+Victim 1,Victim 2,Victim 3,Passionate Terrorist1,Passionate Terrorist2,Suicidal Vet1,Depressed Vet1
+Drama,Horror,Action
+3.69
+
+ID91102
+Harry Potter and the Toppling Towers: Operation Blue Neptune
+2011
+Osama Bin Laden,George W Bush,Barack Obama
+Victim 2,Victim 3,Passionate Terrorist3,Passionate Terrorist4,Suicidal Vet2,Depressed Vet1
+Drama,Horror,Comedy
+4.20
+
+ID91103
+Harry Potter and the Toppling Towers: Aftermath
+2012
+Barack Obama,Donald Trump
+Victim 1,Victim 2,Passionate Terrorist4,Passionate Terrorist5,Suicidal Vet1
+Romance,Comedy,Horror
+3.14
