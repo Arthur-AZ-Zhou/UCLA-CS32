@@ -1,3 +1,7 @@
+For this project, compile all classes into a build file and then run it. To test the build file, create objects in main and then insert it into trees
+and databases to make sure the data structures we learned in class works. Then use recommender to test if the recommendation algorithm is correct or not. 
+The test data is listed under "I implemented..."
+
 I have no bugs as far as my knowledge. The only thing that tripped me up for a very long time was I freed something twice in tcache (or whatever the
 error message said) and I figured that out. The reason being was my userDatabase and my movieDatabase private member variables in my Recommender class
 were instances and not pointers so as a result I think the database trees were deleted twice when it came to cleaning up my Recommender and main. To solve
