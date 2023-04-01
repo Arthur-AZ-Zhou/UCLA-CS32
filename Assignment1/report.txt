@@ -1,0 +1,3 @@
+To run this program, compile all files into a singular build, then run. Should be a game involving a player dodging rabbits with a new history feature
+being implemented. Test game with arenas of different sizes in main.cpp. To adjust the size of the arena and the number of rabbits, change the parameters of 
+Game object.
