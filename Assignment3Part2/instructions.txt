@@ -1,0 +1,5 @@
+To build the file download the skeleton provided by the CS32 
+website. After replacing the files with the same name as the
+ones on the Github in the skeleton, run the PeachParty.sln file on 
+visual studio 2022 on Windows. There should pop up a game of 
+PeachParty. Both players must compete by seeing who can score more stars in 100 seconds while avoiding baddies and negative squares.
